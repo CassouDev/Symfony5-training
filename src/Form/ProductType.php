@@ -27,9 +27,8 @@ class ProductType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'label' => 'Nom du produit',
-                'attr' => [
-                    'placeholder' => 'Tapez le nom du produit'
-                ]
+                'attr' => ['placeholder' => 'Tapez le nom du produit'],
+                'required' => false
             ])
             ->add('shortDescription', TextareaType::class, [
                 'label' => 'Description courte',
@@ -43,7 +42,8 @@ class ProductType extends AbstractType
                     'placeholder' => 'Tapez le prix du produit'
                 ],
                 // 'divide' => false // si je ne veux pas que cela divise et remultiplie par 100 dans le PriceType::class dans Type/PriceType
-                'divisor' => 100  // $builder->get('price')->addModelTransformer(new CentimesTransformer); idem
+                'divisor' => 100,  // $builder->get('price')->addModelTransformer(new CentimesTransformer); idem
+                'required' => false
             ])
             ->add('mainPicture', UrlType::class, [
                 'label' => 'Image du produit',
