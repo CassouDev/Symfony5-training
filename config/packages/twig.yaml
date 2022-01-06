@@ -3,3 +3,6 @@ twig:
     form_themes:
         - bootstrap_4_layout.html.twig
         # - autre-theme.html.twig -- pour surcharger le premier thème
+    globals:
+        categoryRepository: "@App\\Repository\\CategoryRepository"
+        # permet d'accéder à la liste des catégories et de l'injecter dans tous les templates - l'@ fait référence à
